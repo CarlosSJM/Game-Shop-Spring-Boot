@@ -19,6 +19,10 @@ public class VideojuegoService {
         //tendremos un repositorio que nos permita intereactuar con la BBDD
     }
 
+    public List<Videojuego> buscarPorDistribuidor( int distribuidorId){
+        return videoJuegoRepository.buscarPorDistribuidor(distribuidorId);
+    }
+
     public List<Videojuego> buscarDestacados() {
 
         

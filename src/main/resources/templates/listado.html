@@ -20,7 +20,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" th:href="@{/} ">
         <img
           src="img/iconfinder_Gameboy_653251.png"
           width="30"
@@ -43,7 +43,7 @@
               <div class="card-body d-flex flex-column justify-content-between">
                 <div>
                   <h5 th:text="${juego.nombre} " class="card-title"></h5>
-                  <span th:text="${juego.distribuidor.nombre} " class="badge badge-pill badge-warning"></span>
+                  <a th:href="@{/videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id} )} "  th:text="${juego.distribuidor.nombre} " class="badge badge-pill badge-warning"></a>
                   <p th:text="${juego.descripcion}"  class="card-text">
                   </p>
                 </div>

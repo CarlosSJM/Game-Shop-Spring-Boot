@@ -11,5 +11,9 @@ public interface VideoJuegoRepository extends JpaRepository<Videojuego,Integer> 
     //quesry en JPQL
     @Query(value ="select * from VideoJuego v order by v.nombre", nativeQuery = true)   
     List<Videojuego> buscarTodos();
+
+
+    @Query(value ="select * from VideoJuego v where v.distribuidor_id = ?1 order by v.nombre", nativeQuery = true)
+    List<Videojuego> buscarPorDistribuidor(int distribuidorId);
     
 }

@@ -1,17 +1,32 @@
 package com.dosideas.videojuegos.Service;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 import com.dosideas.videojuegos.domain.Videojuego;
+import com.dosideas.videojuegos.repository.VideoJuegoRepository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
 public class VideojuegoService {
+
+    private final VideoJuegoRepository videoJuegoRepository;
+
+    public VideojuegoService(VideoJuegoRepository videoJuegoRepository){
+        this.videoJuegoRepository = videoJuegoRepository;
+        //tendremos un repositorio que nos permita intereactuar con la BBDD
+    }
+
     public List<Videojuego> buscarDestacados() {
-        List<Videojuego> destacados = new ArrayList<>();
+
+        
+        return videoJuegoRepository.findAll(Sort.by("nombre").ascending());
+
         //lista video juegos mockeados
+        /* List<Videojuego> destacados = new ArrayList<>();
+        
         Videojuego  juego = new Videojuego();
         juego.setNombre("Fall Out 3");
         juego.setDescripcion("Is a 2008 post-apocalyptic action role-playing open worldvideo game developed by Bethesda Game Studios and published byBethesda Softworks.");
@@ -32,11 +47,11 @@ public class VideojuegoService {
 
         juego = new Videojuego();
         juego.setNombre("Baldurs Gate III");
-        juego.setDescripcion(" Baldur's Gate is a series of role-playing video games set in the Forgotten Realms Dungeons & Dragons campaign setting.");
+        juego.setDescripcion("Baldur's Gate is a series of role-playing video games set in the Forgotten Realms Dungeons & Dragons campaign setting.");
         juego.setImagenUrl("https://smartcdkeys.com/image/cache/data/products/baldurs-gate-iii-3/cover/baldurs-gate-iii-3-smartcdkeys-cheap-cd-key-cover-390x580.png");
         destacados.add(juego);
 
-        return destacados;
+        return destacados; */
         
     }
     

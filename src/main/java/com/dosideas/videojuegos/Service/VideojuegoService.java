@@ -6,7 +6,7 @@ import java.util.List;
 import com.dosideas.videojuegos.domain.Videojuego;
 import com.dosideas.videojuegos.repository.VideoJuegoRepository;
 
-import org.springframework.data.domain.Sort;
+//import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,7 +22,8 @@ public class VideojuegoService {
     public List<Videojuego> buscarDestacados() {
 
         
-        return videoJuegoRepository.findAll(Sort.by("nombre").ascending());
+        //return videoJuegoRepository.findAll(Sort.by("nombre").ascending());
+        return videoJuegoRepository.buscarTodos();
 
         //lista video juegos mockeados
         /* List<Videojuego> destacados = new ArrayList<>();
